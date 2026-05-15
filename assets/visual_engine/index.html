@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+    <title>Kalvin Visual Engine</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin: 0;
+            overflow: hidden;
+            background: black;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            touch-action: none;
+        }
+
+        canvas {
+            display: block;
+        }
+
+        /* Educational Labels */
+        .scene-label {
+            position: absolute;
+            color: #ffffff;
+            font-size: 12px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            pointer-events: none;
+            transform: translateX(-50%);
+            text-align: center;
+            text-shadow: 0 0 8px rgba(0, 0, 0, 0.9), 0 0 20px rgba(0, 0, 0, 0.6);
+            white-space: nowrap;
+            z-index: 10;
+            opacity: 0.85;
+            transition: opacity 0.3s ease;
+        }
+
+        .scene-label .label-name {
+            display: block;
+            font-size: 13px;
+            margin-bottom: 2px;
+        }
+
+        .scene-label .label-info {
+            display: block;
+            font-size: 9px;
+            font-weight: 400;
+            opacity: 0.6;
+            letter-spacing: 0.5px;
+        }
+
+        .scene-label.sun-label .label-name {
+            color: #ffdd66;
+            text-shadow: 0 0 10px rgba(255, 200, 50, 0.5), 0 0 6px rgba(0, 0, 0, 0.9);
+        }
+
+        .scene-label.earth-label .label-name {
+            color: #66bbff;
+            text-shadow: 0 0 10px rgba(100, 180, 255, 0.5), 0 0 6px rgba(0, 0, 0, 0.9);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Educational Labels -->
+    <div id="label-sun" class="scene-label sun-label" style="display:none;">
+        <span class="label-name">☀ Sun</span>
+        <span class="label-info">Star · 1.4M km diameter</span>
+    </div>
+    <div id="label-earth" class="scene-label earth-label" style="display:none;">
+        <span class="label-name">🌍 Earth</span>
+        <span class="label-info">Planet · 12,742 km diameter</span>
+    </div>
+
+    <!-- Three.js core -->
+    <script src="three.min.js"></script>
+    <!-- Extensions -->
+    <script src="OrbitControls.js"></script>
+    <script src="AnaglyphEffect.js"></script>
+    <!-- Scene modules -->
+    <script src="scenes/solar_system.js"></script>
+    <script src="scenes/volcano.js"></script>
+    <script src="scenes/water_cycle.js"></script>
+    <!-- Engine core (loaded last) -->
+    <script src="main.js"></script>
+
+</body>
+
+</html>
